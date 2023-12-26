@@ -1,4 +1,7 @@
-def check(string: str, *alphabets: str) -> bool:
+from .alphabet import Alphabet
+
+
+def check(string: str, *alphabets: Alphabet) -> bool:
 	"""
 	Check if a string is present in any of the specified alphabets.
 
@@ -8,11 +11,7 @@ def check(string: str, *alphabets: str) -> bool:
 	:returns: True if the string is found in any of the alphabets, False otherwise.
 	"""
 
-	for alphabet in alphabets:
-		if string in alphabet:
-			return True
-
-	return False
+	return any(string in alphabet.full for alphabet in alphabets)
 
 
 def is_contains_spaces(string: str) -> bool:
@@ -24,7 +23,7 @@ def is_contains_spaces(string: str) -> bool:
 	:returns: True if the string contains spaces, False otherwise.
 	"""
 
-	return any(char.isspace() for char in string)
+	return any(character.isspace() for character in string)
 
 
 def is_contains_alphabetic(string: str) -> bool:
@@ -36,7 +35,7 @@ def is_contains_alphabetic(string: str) -> bool:
 	:returns: True if the string contains alphabetic characters, False otherwise.
 	"""
 
-	return any(char.isalpha() for char in string)
+	return any(character.isalpha() for character in string)
 
 
 def is_contains_digits(string: str) -> bool:
@@ -48,7 +47,7 @@ def is_contains_digits(string: str) -> bool:
 	:returns: True if the string contains numeric digits, False otherwise.
 	"""
 
-	return any(char.isdigit() for char in string)
+	return any(character.isdigit() for character in string)
 
 
 def is_contains_lowercase(string: str) -> bool:
@@ -60,7 +59,7 @@ def is_contains_lowercase(string: str) -> bool:
 	:returns: True if the string contains lowercase letters, False otherwise.
 	"""
 
-	return any(char.islower() for char in string)
+	return any(character.islower() for character in string)
 
 
 def is_contains_uppercase(string: str) -> bool:
@@ -72,7 +71,7 @@ def is_contains_uppercase(string: str) -> bool:
 	:returns: True if the string contains uppercase letters, False otherwise.
 	"""
 
-	return any(char.isupper() for char in string)
+	return any(character.isupper() for character in string)
 
 
 def is_contains_special(string: str) -> bool:
@@ -84,7 +83,7 @@ def is_contains_special(string: str) -> bool:
 	:returns: True if the string contains special characters, False otherwise.
 	"""
 
-	return any(not char.isalnum() for char in string)
+	return any(not (character.isalpha() or character.isspace()) for character in string)
 
 
 def is_contains_substring(string: str, substring: str) -> bool:

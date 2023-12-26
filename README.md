@@ -3,9 +3,6 @@
 
 [![License](https://img.shields.io/badge/License-MIT-green)](license.txt)
 
-### Requirements
-![Python Version](https://img.shields.io/badge/Python-3.11%2B-blue)
-
 ## Introduction
 **GlobalKit** is a module that provides alphabets from various languages in different scripts.
 It can be used for language-related tasks, educational purposes and more.
@@ -16,7 +13,8 @@ ___
 **English**, **Spanish**, **French**, **Dutch**, **Portuguese**, **Italian**, **Finnish** , **Swedish**,
 **Norwegian**, **Russian**, **Ukrainian**, **Polish**, **Bulgarian**, **digits** and **many more**
 
-`check(string, *alphabets)` checks if `string` is present in any of the specified `alphabets`.
+`check(string, *alphabets)` checks if `string` is present in any of the specified `*alphabets`.
+The `*alphabets` must be of type `Alphabet`. The variables of this type can be imported from **GlobalKit**.
 
 `is_contains_spaces(string)` checks if `string` contains any spaces.
 

@@ -1,4 +1,4 @@
-from .alphabet import Alphabet
+from GlobalKit.alphabet import Alphabet
 
 # Create instances of the Alphabet class for various languages
 english = Alphabet('abcdefghijklmnopqrstuvwxyz', 'aeiouy', 'bcdfghjklmnpqrstvwxz')
@@ -13,8 +13,8 @@ swedish = Alphabet('abcdefghijklmnopqrstuvwxyzåäö', 'aeiouyåäö', 'bcdfghjk
 norwegian = Alphabet('abcdefghijklmnopqrstuvwxyzåæø', 'aeiouyåæø', 'bcdfghjklmnpqrstvwxz')
 russian = Alphabet('абвгдеёжзийклмнопрстуфхцчшщъыьэюя', 'аеёиоуэыюя', 'бвгджзйклмнпрстфхцчшщ', 'ъь')
 ukrainian = Alphabet('абвгґдеєжзиіїйклмнопрстуфхцчшщьюя', 'аеєиіїоуюя', 'бвгґджзйклмнпрстфхцчшщ', 'ь')
-polish = Alphabet('aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż', 'aeiouyąę', 'bcćdfghjklłmnńpqrsśtvwxzźż')
 bulgarian = Alphabet('абвгдежзийклмнопрстуфхцчшщъьюя', 'аеиоуъя', 'бвгджзйклнпрстфхцчшщ', 'ь')
+polish = Alphabet('aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż', 'aeiouyąę', 'bcćdfghjklłmnńpqrsśtvwxzźż')
 
 # Define other character sets
 digits: str = '0123456789'

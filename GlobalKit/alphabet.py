@@ -1,5 +1,5 @@
 class Alphabet:
-	def __init__(self, full: str, vowels: str, consonants: str, special: str | None = None):
+	def __init__(self, full: str, vowels: str, consonants: str, special: str | None = None) -> None:
 		# Initialize the full alphabet
 		self.full_lowercase: str = full.lower()
 		self.full_uppercase: str = full.upper()
@@ -17,16 +17,16 @@ class Alphabet:
 
 		# Check if special characters are provided
 		if special is None:
-			self.special_lowercase = None
-			self.special_uppercase = None
-			self.special = None
+			self.special_lowercase: None = None
+			self.special_uppercase: None = None
+			self.special: None = None
 		else:
 			# Initialize the special characters
 			self.special_lowercase: str = special.lower()
 			self.special_uppercase: str = special.upper()
 			self.special: str = self.special_lowercase + self.special_uppercase
 
-	def __call__(self, *args, **kwargs):
+	def __call__(self, *args, **kwargs) -> None:
 		# Print the full alphabet
 		print('Full:\t\t', ' '.join(self.full_lowercase))
 		print('-' * 100)
