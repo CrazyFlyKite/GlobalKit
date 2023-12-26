@@ -1,0 +1,15 @@
+# Compiled Python files
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Generated files or directories
+dist/
+
+# PyCharm IDE files
+.idea/
+
+# DS Store
+.DS_Store
