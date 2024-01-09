@@ -1,6 +1,6 @@
 from GlobalKit.alphabet import Alphabet
 
-# Create instances of the Alphabet class for various languages
+# Create instances of the Alphabet class for many languages
 english = Alphabet('abcdefghijklmnopqrstuvwxyz', 'aeiouy', 'bcdfghjklmnpqrstvwxz')
 spanish = Alphabet('abcdefghijklmnñopqrstuvwxyz', 'aeiouáéíóúü', 'bcdfghjklmnñpqrstvwxyz')
 french = Alphabet('abcdefghijklmnopqrstuvwxyzàâçéèêëîïôùûüœ', 'aeiouàâéèêëîïôùûüœ', 'bcçdfghjklmnpqrstvwxyz')

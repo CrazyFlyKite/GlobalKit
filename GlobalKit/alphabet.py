@@ -1,5 +1,11 @@
+from typing import Optional
+
+# Define new type: Str or None
+type StrOrNone = str | None
+
+# Define Alphabet
 class Alphabet:
-	def __init__(self, full: str, vowels: str, consonants: str, special: str | None = None) -> None:
+	def __init__(self, full: str, vowels: str, consonants: str, special: Optional[StrOrNone] = None) -> None:
 		# Initialize the full alphabet
 		self.full_lowercase: str = full.lower()
 		self.full_uppercase: str = full.upper()
