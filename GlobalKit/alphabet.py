@@ -1,7 +1,8 @@
-from typing import Optional
+from typing import Union, Self, Optional, Iterator
 
-# Define new type: Str or None
-type StrOrNone = str | None
+# Define new custom type: Str or None
+type StrOrNone = Union[str, None]
+
 
 # Define Alphabet
 class Alphabet:
@@ -26,11 +27,19 @@ class Alphabet:
 			self.special_lowercase: None = None
 			self.special_uppercase: None = None
 			self.special: None = None
+			self.is_contains_special: bool = False
 		else:
 			# Initialize the special characters
 			self.special_lowercase: str = special.lower()
 			self.special_uppercase: str = special.upper()
 			self.special: str = self.special_lowercase + self.special_uppercase
+			self.is_contains_special: bool = True
+
+	def __repr__(self) -> str:
+		return self.full
+
+	def __str__(self) -> str:
+		return f'Alphabet: {self.full_lowercase}'
 
 	def __call__(self, *args, **kwargs) -> None:
 		# Print the full alphabet
@@ -46,3 +55,30 @@ class Alphabet:
 		# Check if special characters are provided
 		if self.special is not None:
 			print('Special:\t', ' '.join(self.special_lowercase))
+
+	def __iter__(self) -> Iterator[str]:
+		return iter(self.full_lowercase)
+
+	def __getitem__(self, key: int) -> str:
+		return self.full_lowercase[key]
+
+	def __len__(self) -> int:
+		return len(self.full_lowercase)
+
+	def __lt__(self, other: Self) -> bool:
+		return len(self.full_lowercase) < len(other.full_lowercase)
+
+	def __gt__(self, other: Self) -> bool:
+		return len(self.full_lowercase) > len(other.full_lowercase)
+
+	def __eq__(self, other: Self) -> bool:
+		return self.full_lowercase == other.full_lowercase
+
+	def __ne__(self, other: Self) -> bool:
+		return self.full_lowercase != other.full_lowercase
+
+	def __le__(self, other: Self) -> bool:
+		return len(self.full_lowercase) <= len(other.full_lowercase)
+
+	def __ge__(self, other: Self) -> bool:
+		return len(self.full_lowercase) >= len(other.full_lowercase)

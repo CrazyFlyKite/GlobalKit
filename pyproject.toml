@@ -4,10 +4,11 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "GlobalKit"
-version = "1.8"
+version = "1.7"
 description = "Get alphabets from various languages and a set of functions for text manipulation"
 authors = [{ name = "CrazyFlyKite", email = "karpenkoartem2846@gmail.com" }]
 readme = "README.md"
+license = { file = "license.txt"}
 classifiers = [
 	"Development Status :: 5 - Production/Stable",
 	"License :: OSI Approved :: MIT License",
@@ -21,4 +22,5 @@ include_package_data = true
 
 [project.urls]
 Repository = "https://github.com/CrazyFlyKite/GlobalKit"
+BugTracker = "https://github.com/CrazyFlyKite/GlobalKit/issues"
 PyPI = "https://pypi.org/project/GlobalKit"
