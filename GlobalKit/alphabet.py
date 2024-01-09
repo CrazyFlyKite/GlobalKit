@@ -5,8 +5,10 @@ type StrOrNone = Union[str, None]
 
 
 # Define Alphabet
-class Alphabet:
+class Alphabet(object):
 	def __init__(self, full: str, vowels: str, consonants: str, special: Optional[StrOrNone] = None) -> None:
+		super().__init__()
+
 		# Initialize the full alphabet
 		self.full_lowercase: str = full.lower()
 		self.full_uppercase: str = full.upper()
