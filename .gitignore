@@ -8,6 +8,9 @@ venv/
 # Generated files or directories
 dist/
 
+# Username and Password
+.pypirc
+
 # PyCharm IDE files
 .idea/
 
