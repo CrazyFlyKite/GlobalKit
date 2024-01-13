@@ -1,7 +1,6 @@
 # Import everything
-from .main import *
 from .functions import *
-from alphabet import Alphabet
+from .main import *
 
 """
 GlobalKit: Get alphabets from various languages and a set of functions for text manipulation
