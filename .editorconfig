@@ -9,4 +9,3 @@ indent_style = tab
 [*.py]
 trim_trailing_whitespace = true
 insert_final_newline = true
-ij_python_space_after_comma = true

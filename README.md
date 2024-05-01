@@ -6,7 +6,6 @@
 
 **GlobalKit** provides alphabets from various languages in different scripts.
 It can be used for language-related tasks, educational purposes and more.
-___
 
 ## Alphabets
 
@@ -35,9 +34,11 @@ All languages are instances of the `Alphabet` dataclass, providing access to var
 - `consonants`, `consonants_lowercase`, `consonants_uppercase`
 - `special`, `special_lowercase`, `special_uppercase`
 
-To verify the presence of special characters in a language, you can use (If not it will return `None`):
+To verify the presence of special characters in a language, you can use:
 
 - `has_special`
+
+If False, `special`, `special_lowercase`, `special_uppercase` will return `None`.
 
 ```python
 import GlobalKit as gk
@@ -62,9 +63,11 @@ You can also easily create your custom alphabet using the `Alphabet` dataclass.
 If the language unique characters beyond traditional vowels or consonants, you can specify them separately at the end.
 
 ```python
+from typing import Final
+
 from GlobalKit import Alphabet
 
-romanian: Alphabet = Alphabet('abcdefghijklmnopqrstuvwxyzăâîșț', 'aeiouyăâî', 'bcdfghjklmnpqrstvwxzșț')
+romanian: Final[Alphabet] = Alphabet('abcdefghijklmnopqrstuvwxyzăâîșț', 'aeiouyăâî', 'bcdfghjklmnpqrstvwxzșț')
 
 print(romanian.full)  # abcdefghijklmnopqrstuvwxyzăâîșțABCDEFGHIJKLMNOPQRSTUVWXYZĂÂÎȘȚ
 ```
@@ -72,7 +75,7 @@ print(romanian.full)  # abcdefghijklmnopqrstuvwxyzăâîșțABCDEFGHIJKLMNOPQRST
 ## String Manipulations
 
 `check(string, *alphabets)` checks if `string` is present in any of the specified `*alphabets`.
-The `*alphabets` must be of type `Alphabet`. The variables of this type can be imported from **GlobalKit**.
+The `*alphabets` must be of type `Alphabet`. The variables of this type can be also imported from **GlobalKit**.
 
 `is_contains_spaces(string)` checks if `string` contains any spaces.
 
@@ -86,26 +89,21 @@ The `*alphabets` must be of type `Alphabet`. The variables of this type can be i
 
 `is_contains_special(string)` checks if `string` contains any special characters.
 
-`is_contains_substring(string, substring)` checks if `string` contains `substring`.
-
 ```python
-from GlobalKit import check, english, russian, italian, digits
+from GlobalKit import check, english, russian, italian, ukrainian
 
-check('e', english.full)  # True
-check('1', english.vowels_uppercase, digits)  # True
-check('h', russian.vowels, italian.consonants)  # False
+print(check('e', english))  # True
+print(check('1', english, italian))  # False
+print(check('h', russian, ukrainian))  # False
 ```
 
 ```python
-from GlobalKit import is_contains_spaces, is_contains_uppercase, is_contains_special, is_contains_substring
+from GlobalKit import is_contains_spaces, is_contains_uppercase, is_contains_special
 
 print(is_contains_spaces('Hello, world!'))  # True
 print(is_contains_uppercase('hello, world!'))  # False
 print(is_contains_special('Hello, world!'))  # True
-print(is_contains_substring('Hello, world!', 'world'))  # True
 ```
-
-___
 
 ## Contact
 

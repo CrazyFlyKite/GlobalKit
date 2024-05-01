@@ -84,16 +84,3 @@ def is_contains_special(string: str) -> bool:
 	"""
 
 	return any(not (character.isalpha() or character.isspace()) for character in string)
-
-
-def is_contains_substring(string: str, substring: str) -> bool:
-	"""
-	Check if a string contains a specific substring.
-
-	:parameter string: The string to be checked.
-	:parameter substring: The substring to search for.
-
-	:returns: True if the string contains the provided substring, False otherwise.
-	"""
-
-	return substring in string

@@ -34,10 +34,6 @@ class TestFunctions(unittest.TestCase):
 		self.assertEqual(is_contains_special('So, what?'), True)
 		self.assertEqual(is_contains_special('hello world'), False)
 
-	def is_contains_substring(self):
-		self.assertEqual(is_contains_substring('Hello, world!', 'world'), True)
-		self.assertEqual(is_contains_substring('When is the meeting?', 'cupcake'), False)
-
 
 if __name__ == '__main__':
 	unittest.main()

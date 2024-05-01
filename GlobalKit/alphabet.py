@@ -1,11 +1,7 @@
 from dataclasses import dataclass, field
-from typing import Union
-
-# Define new custom type: str or None
-type StrOrNone = Union[str, None]
+from typing import Optional
 
 
-# Define Alphabet
 @dataclass
 class Alphabet:
 	full_lowercase: str
@@ -20,18 +16,21 @@ class Alphabet:
 	consonants_uppercase: str = field(init=False)
 	consonants: str = field(init=False)
 
-	special_lowercase: StrOrNone = None
-	special_uppercase: StrOrNone = field(init=False)
-	special: StrOrNone = field(init=False)
+	special_lowercase: Optional[str] = None
+	special_uppercase: Optional[str] = field(init=False)
+	special: Optional[str] = field(init=False)
 	has_special: bool = field(init=False)
 
-	def __post_init__(self):
+	def __post_init__(self) -> None:
+		self.full_lowercase = self.full_lowercase.lower().strip()
 		self.full_uppercase = self.full_lowercase.upper()
 		self.full = self.full_lowercase + self.full_uppercase
 
+		self.vowels_lowercase = self.vowels_lowercase.lower().strip()
 		self.vowels_uppercase = self.vowels_lowercase.upper()
 		self.vowels = self.vowels_lowercase + self.vowels_uppercase
 
+		self.consonants_lowercase = self.consonants_lowercase.lower().strip()
 		self.consonants_uppercase = self.consonants_lowercase.upper()
 		self.consonants = self.consonants_lowercase + self.consonants_uppercase
 
