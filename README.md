@@ -4,8 +4,7 @@
 
 ## Introduction
 
-**GlobalKit** provides alphabets from various languages in different scripts.
-It can be used for language-related tasks, educational purposes and more.
+**GlobalKit** provides alphabets from different languages in different scripts.
 
 ## Alphabets
 
@@ -24,10 +23,10 @@ It can be used for language-related tasks, educational purposes and more.
 - **Ukrainian**
 - **Polish**
 - **Bulgarian**
-- **digits**
-- and **many more**
+- digits
+- brackets
 
-All languages are instances of the `Alphabet` dataclass, providing access to various string representations:
+All languages are instances of the `Alphabet` dataclass, so they all have these string representations:
 
 - `full`, `full_lowercase`, `full_uppercase`
 - `vowels`, `vowels_lowercase`, `vowels_uppercase`
@@ -43,24 +42,24 @@ If False, `special`, `special_lowercase`, `special_uppercase` will return `None`
 ```python
 import GlobalKit as gk
 
-print(gk.english.full)  # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
-print(gk.french.full_lowercase)  # abcdefghijklmnopqrstuvwxyzàâçéèêëîïôùûüœ
-print(gk.spanish.consonants_uppercase)  # BCDFGHJKLMNÑPQRSTVWXYZ
-print(gk.german.vowels)  # aeiouäöüAEIOUÄÖÜ
+print(gk.ENGLISH.full)  # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+print(gk.FRENCH.full_lowercase)  # abcdefghijklmnopqrstuvwxyzàâçéèêëîïôùûüœ
+print(gk.SPANISH.consonants_uppercase)  # BCDFGHJKLMNÑPQRSTVWXYZ
+print(gk.GERMAN.vowels)  # aeiouäöüAEIOUÄÖÜ
 
-print(gk.digits)  # 0123456789
-print(gk.brackets)  # ()[]{}<>
-print(gk.space)  # 
+print(gk.DIGITS)  # 0123456789
+print(gk.BRACKETS)  # ()[]{}<>
 
-print(gk.dutch.special)  # None
-print(gk.russian.special_uppercase)  # ЪЬ
-print(gk.ukrainian.has_special)  # True
+print(gk.DUTCH.special)  # None
+print(gk.RUSSIAN.special_uppercase)  # ЪЬ
+print(gk.UKRAINIAN.has_special)  # True
 ```
 
 ### Creating Your Own Alphabet
 
 You can also easily create your custom alphabet using the `Alphabet` dataclass.
 If the language unique characters beyond traditional vowels or consonants, you can specify them separately at the end.
+For example: "ьъ" in Russian.
 
 ```python
 from typing import Final
@@ -90,11 +89,11 @@ The `*alphabets` must be of type `Alphabet`. The variables of this type can be a
 `is_contains_special(string)` checks if `string` contains any special characters.
 
 ```python
-from GlobalKit import check, english, russian, italian, ukrainian
+from GlobalKit import check, ENGLISH, RUSSIAN, ITALIAN, UKRAINIAN
 
-print(check('e', english))  # True
-print(check('1', english, italian))  # False
-print(check('h', russian, ukrainian))  # False
+print(check('e', ENGLISH))  # True
+print(check('1', ENGLISH, ITALIAN))  # False
+print(check('h', RUSSIAN, UKRAINIAN))  # False
 ```
 
 ```python

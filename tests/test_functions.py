@@ -1,14 +1,14 @@
 import unittest
 
 from GlobalKit.functions import *
-from GlobalKit.main import english, russian
+from GlobalKit.main import ENGLISH, RUSSIAN
 
 
 class TestFunctions(unittest.TestCase):
 	def test_check(self):
-		self.assertEqual(check('a', english, russian), True)
-		self.assertEqual(check('A', english), True)
-		self.assertEqual(check('b', russian), False)
+		self.assertEqual(check('a', ENGLISH, RUSSIAN), True)
+		self.assertEqual(check('A', ENGLISH), True)
+		self.assertEqual(check('b', RUSSIAN), False)
 
 	def test_is_contains_spaces(self):
 		self.assertEqual(is_contains_spaces('Hello, world!'), True)
